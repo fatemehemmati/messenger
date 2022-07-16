@@ -1,0 +1,10 @@
+.avatar{
+   width: 40px;
+   border-radius: 50%/50%;
+}
+.container{
+    border:0.2px solid grey;
+    border-radius :5vh;
+    width: 20%;
+    padding: 5px;
+}

@@ -1,9 +1,10 @@
-import ChatBox from "./components/chat/ChatBox";
+
+import Container from "./components/Container";
 function App() {
   return (
     <div>
 
-<ChatBox />
+<Container />
      
     </div>
   );
