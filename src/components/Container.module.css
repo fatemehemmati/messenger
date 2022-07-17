@@ -1,5 +1,15 @@
 .container{
     display:grid;
-    grid-template-columns: 6fr 6fr;
-    column-gap: 10px;
+    grid-template-columns: 3fr 9fr;
+    column-gap: 5px;
+    width: 98%;
+    justify-self: center;
+    margin: 9px;
+    border:2px solid grey;
+    height:100%;
+    
+}
+.leftSide{
+    display: flex;
+    flex-direction: column;
 }

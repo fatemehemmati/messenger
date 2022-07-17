@@ -1,0 +1,8 @@
+.container{
+   border: 0.2px solid grey;
+   border-radius: 5vh; 
+    flex-grow: 3;
+    width: 100%;
+    padding: 4px;
+   margin-left: -4px;
+}
