@@ -6,8 +6,8 @@ const Profile = () => {
   return (
     <>
       <div className={style.container}> <img className={style.avatar} src={avatar} alt="" />
-      <p>username</p>
-        <p>field</p>
+      <div className={style.character}><p><strong>username</strong></p>
+        <p>field</p></div>
       </div>
      
     </>

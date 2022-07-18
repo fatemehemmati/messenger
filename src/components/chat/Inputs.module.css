@@ -1,0 +1,21 @@
+.input{
+       border: none;
+       width: 85%;
+       border-radius: 20px;
+       height: 89%;
+       margin-top: 2px;
+       margin-left: 3px;
+       outline: none;
+     
+       
+}
+.inputContainer{
+     position:absolute;
+       bottom: 0px;
+       border: 0.5px solid grey;
+    border-radius:20px;
+       width: 90%;
+       margin-left: 40px; 
+       margin-bottom: 20px;
+       height: 7%;
+}

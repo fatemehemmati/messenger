@@ -5,8 +5,9 @@
     width: 98%;
     justify-self: center;
     margin: 9px;
-    border:2px solid grey;
-    height:100%;
+  border:0.5px solid grey;
+    height:95vh;
+       border-radius: 10px;
     
 }
 .leftSide{

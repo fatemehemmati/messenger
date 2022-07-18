@@ -4,12 +4,15 @@ import Contacts from './user/Contacts';
 
 import style from './Container.module.css';
 
-import React from 'react'
+import React from 'react';
+
+import Logo from './Logo';
 
 const Container = () => {
   return (
       <div  className={style.container}>
       <div className={style.leftSide}>
+        <Logo />
           <Profile />
         <Contacts />
       </div>  
