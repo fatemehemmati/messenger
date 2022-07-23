@@ -1,16 +1,23 @@
 .container{
     display:grid;
-    grid-template-columns: 3fr 9fr;
+    grid-template-columns: 4fr 11fr 1fr;
     column-gap: 5px;
-    width: 98%;
+    width: 88%;
     justify-self: center;
     margin: 9px;
   border:0.5px solid grey;
     height:95vh;
        border-radius: 10px;
+       margin-left: 74px;
     
 }
 .leftSide{
     display: flex;
     flex-direction: column;
+}
+.rightSide{
+  display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
 }

@@ -1,0 +1,7 @@
+.sendImg{
+    width: 30px;
+    margin-top: 2px;
+    margin-right: 5px;
+    border-radius: 50%/50%;
+     cursor: pointer;
+}

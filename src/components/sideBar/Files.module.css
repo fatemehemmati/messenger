@@ -1,0 +1,10 @@
+.icons{
+    width: 40px;
+    cursor: pointer;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 35%;
+}

@@ -1,0 +1,12 @@
+.avatar{
+   width:35px;
+   border-radius: 50%/50%;
+   justify-content: center;
+   cursor: pointer;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 35%;
+}
