@@ -9,6 +9,7 @@ import React,{useState} from 'react';
 import Logo from './Logo';
 import People from './sideBar/People';
 import Inputs from './chat/Inputs';
+import UploadFile from './sideBar/UploadFile';
 const Container = () => {
   const [page, setPage] = useState('chat');
   return (
@@ -18,8 +19,10 @@ const Container = () => {
         <Profile />
         <Contacts />
       </div>
-     <div className={style.middle}> <ChatBox />
-        <Inputs />
+      <div className={style.middle}>
+        {page==='chat'? <ChatBox />:<UploadFile /> }
+        <Inputs changePage={(page)=>setPage(page)} />
+      
       </div>
      
       <div className={style.rightSide}>
