@@ -4,26 +4,30 @@ import Contacts from './user/Contacts';
 import Files from './sideBar/Files';
 import style from './Container.module.css';
 
-import React from 'react';
+import React,{useState} from 'react';
 
 import Logo from './Logo';
 import People from './sideBar/People';
-
+import Inputs from './chat/Inputs';
 const Container = () => {
+  const [page, setPage] = useState('chat');
   return (
-      <div  className={style.container}>
+    <div className={style.container}>
       <div className={style.leftSide}>
         <Logo />
-          <Profile />
+        <Profile />
         <Contacts />
-      </div>  
-      <ChatBox />
+      </div>
+     <div className={style.middle}> <ChatBox />
+        <Inputs />
+      </div>
+     
       <div className={style.rightSide}>
         <Files />
         <People />
       </div>
-      </div>
-  )
+    </div>
+  );
 }
 
 export default Container;

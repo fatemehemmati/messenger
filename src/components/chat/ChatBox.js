@@ -9,7 +9,7 @@ const ChatBox = () => {
       <div className={style.ChatBox}>
         <div>chat box</div>
         <Message />
-       <Inputs />
+      
       </div>
    
     </div>

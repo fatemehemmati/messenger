@@ -7,7 +7,7 @@ const SearchBox = () => {
     <div className={style.container}>
       <input className={style.searchBox} type="text" placeholder="Search.." name="search" />
           <button type="submit">
-              <img src={searchIcon}class={style.searchButton} alt="" />
+              <img src={searchIcon}className={style.searchButton} alt="" />
       </button>
     </div>
   );
