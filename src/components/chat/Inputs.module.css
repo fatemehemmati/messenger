@@ -1,11 +1,12 @@
 
 .inputContainer{
+    box-sizing: border-box;
      position:absolute;
        bottom:5vh;
        border: 0.5px solid grey;
     border-radius:20px;
-       width:120vh;
-     margin-left: 6vh;
+       width:100vh;
+        margin-left: 20PX;
        margin-bottom: 20px;
        height: 7%;
        display: flex;
@@ -23,16 +24,16 @@
      
        
 }
-.inputFile {
 
-   display: none;
-
-}
 
 .fileImg{
    cursor: pointer;
-   width:25px;
+
   margin-top: 6px;
   margin-left:30px;
-
+   width: 30px;
+    margin-top: 2px;
+    margin-right: 5px;
+    border-radius: 50%/50%;
+    
 }

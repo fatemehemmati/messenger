@@ -14,7 +14,21 @@ h1{
 
     margin-top: 70px;
 }
-p{
-    display:block;
+label{
+        display:block;
     margin:auto;
+}
+.p{
+    color: rgb(76, 76, 220);
+    cursor: pointer;
+}
+.inputFile {
+
+   display: none;
+
+}
+.close{
+    width: 28px;
+    margin: 10px;
+    cursor: pointer;
 }

@@ -24,9 +24,16 @@
   border: 0.2px solid grey;
   border-radius: 9px;
 }
-.rightSide{
-  display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-}
+ .container2{
+       display:grid;
+    grid-template-columns: 4fr 8fr 4fr;
+    column-gap: 5px;
+    width: 88%;
+    justify-self: center;
+    margin: 9px;
+  border:0.5px solid grey;
+    height:95vh;
+       border-radius: 10px;
+       margin-left: 74px;
+    
+ }

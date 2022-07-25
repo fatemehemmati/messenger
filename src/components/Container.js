@@ -1,17 +1,19 @@
-import ChatBox from './chat/ChatBox';
-import Profile from './user/Profile';
-import Contacts from './user/Contacts';
-import Files from './sideBar/Files';
-import style from './Container.module.css';
 
-import React,{useState} from 'react';
+import React, { useState } from "react";
 
-import Logo from './Logo';
-import People from './sideBar/People';
-import Inputs from './chat/Inputs';
-import UploadFile from './sideBar/UploadFile';
+import ChatBox from "./chat/ChatBox";
+import Profile from "./user/Profile";
+import Contacts from "./user/Contacts";
+import RightSide from "./sideBar/RightSide";
+import style from "./Container.module.css";
+import Logo from "./Logo";
+import Inputs from "./chat/Inputs";
+import UploadFile from "./chat/UploadFile";
+
+
 const Container = () => {
-  const [page, setPage] = useState('chat');
+  const [page, setPage] = useState("chat");
+  const [rightSide, setRightSide] = useState('show');
   return (
     <div className={style.container}>
       <div className={style.leftSide}>
@@ -20,17 +22,19 @@ const Container = () => {
         <Contacts />
       </div>
       <div className={style.middle}>
-        {page==='chat'? <ChatBox />:<UploadFile /> }
-        <Inputs changePage={(page)=>setPage(page)} />
-      
+        {page === "chat" ? (
+          <ChatBox />
+        ) : (
+          <UploadFile changePage={(page) => setPage(page)} />
+        )}
+        <Inputs changePage={(page) => setPage(page)} />
       </div>
-     
-      <div className={style.rightSide}>
-        <Files />
-        <People />
+
+      <div>
+       <RightSide />
       </div>
     </div>
   );
-}
+};
 
 export default Container;
