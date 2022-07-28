@@ -1,4 +1,4 @@
-.container{
+.containerFull{
     display:grid;
     grid-template-columns: 4fr 11fr 1fr;
     column-gap: 5px;
@@ -24,7 +24,7 @@
   border: 0.2px solid grey;
   border-radius: 9px;
 }
- .container2{
+ .containerMed{
        display:grid;
     grid-template-columns: 4fr 8fr 4fr;
     column-gap: 5px;

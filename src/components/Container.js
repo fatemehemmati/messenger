@@ -13,9 +13,9 @@ import UploadFile from "./chat/UploadFile";
 
 const Container = () => {
   const [page, setPage] = useState("chat");
-  const [rightSide, setRightSide] = useState('show');
+  const [fullRightSide, setfullRightSide] = useState(false);
   return (
-    <div className={style.container}>
+    <div className={`${fullRightSide? style.containerMed: style.containerFull}`}>
       <div className={style.leftSide}>
         <Logo />
         <Profile />
@@ -23,7 +23,7 @@ const Container = () => {
       </div>
       <div className={style.middle}>
         {page === "chat" ? (
-          <ChatBox />
+          <ChatBox showFull={fullRightSide} />
         ) : (
           <UploadFile changePage={(page) => setPage(page)} />
         )}
@@ -31,7 +31,7 @@ const Container = () => {
       </div>
 
       <div>
-       <RightSide />
+       <RightSide changeShowFull={(stat)=>setfullRightSide(stat)}  showFull={fullRightSide} />
       </div>
     </div>
   );
