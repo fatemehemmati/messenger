@@ -1,5 +1,5 @@
 import React from 'react';
-import avatar from "../../assets/images/Profile_avatar_placeholder.png";
+import avatar from "../../../assets/images/Profile_avatar_placeholder.png";
 
 import style from './Message.module.css';
 

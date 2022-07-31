@@ -1,7 +1,6 @@
 import React from 'react';
 import style from './ChatBox.module.css';
-import Inputs from './Inputs';
-import Message from './Message';
+import Message from './messages/Message';
 
 const ChatBox = () => {
   return (
