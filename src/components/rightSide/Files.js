@@ -1,10 +1,10 @@
 import {useState,useEffect}from 'react';
 
 import style from './Files.module.css'
-import fileIcon from '../../assets/images/file.svg';
-import imageIcon from "../../assets/images/image.svg";
-import documentIcon from "../../assets/images/document.svg";
-import videoIcon from "../../assets/images/video.png";
+import fileIcon from '../../assets/images/file-text.png';
+import imageIcon from "../../assets/images/image.png";
+import documentIcon from "../../assets/images/file.png";
+import videoIcon from "../../assets/images/film.png";
 const Files = (props) => {
   const [title, setTitle] = useState('file');
   const [icon,setIcon]= useState(fileIcon)
@@ -35,7 +35,9 @@ const Files = (props) => {
     <div className={`${style.container} ${style.flexItem}`}>
       {props.showFull && title}
 
-      <img className={`${style.icons} ${style.flexItem} `} src={icon} alt="" />
+      <div className={`${style.fileItems}  ${style.flexItem}`}>
+        <img className={`${style.icons} `} src={icon} alt="" />
+      </div>
     </div>
   );
 }

@@ -1,0 +1,28 @@
+.icons{
+   
+    cursor: pointer;
+    margin-left: 10px;
+    margin-bottom: 5px;
+    margin-top: 11px;
+}
+.container{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    
+
+}
+.flexItem{
+     margin-left: 8px;
+     margin-right: 7px;
+
+
+}
+.fileItems{
+     margin-top: 11px;
+background-color: rgb(241, 241, 243);
+border-radius: 50%/50%;
+width:35px;
+
+
+}

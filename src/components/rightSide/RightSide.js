@@ -5,8 +5,8 @@ import style from './RightSide.module.css';
 import People from './People';
 import Files from './Files';
 
-import arrow from '../../assets/images/arrow.png';
-import arrow2 from '../../assets/images/arrow2.png'
+import arrow from "../../assets/images/Button.Arrow.png";
+import arrow2 from "../../assets/images/Button.Arrow - Copy.png";
 const RightSide = (props) => {
     const clickArrowHandler = () => {
       props.changeShowFull(!props.showFull);
@@ -14,8 +14,7 @@ const RightSide = (props) => {
     }
   return (
     <div
-      className={
-    style.rightSide}
+      className={style.rightSide}
     >
       <div>
         <img
@@ -27,9 +26,8 @@ const RightSide = (props) => {
       </div>
      
       <People />
-      <p>
-        chat files
-      </p>
+    
+      {props.showFull?<p>chat files</p>:<p>Files</p>} 
       <Files type="1" showFull={props.showFull} />
       <Files type="2" showFull={props.showFull} />
       <Files type="3" showFull={props.showFull} />

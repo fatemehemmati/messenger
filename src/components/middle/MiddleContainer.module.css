@@ -1,9 +1,11 @@
 .middle{
   margin-top: 2vh;
-  height: 95%;
+  height: 92%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  border: 0.2px solid grey;
+  border: 0.2px solid rgb(217, 215, 215);
   border-radius: 9px;
+  width: 100%;
+  background-color: rgb(245, 245, 248);
 }

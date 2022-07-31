@@ -1,5 +1,5 @@
 import React from 'react'
-import attachFileImg from "../../assets/images/attach-file.png";
+import attachFileImg from "../../assets/images/paperclip@2x.png";
 import closeIcon from "../../assets/images/close.png"
 import style from './UploadFile.module.css';
 const UploadFile = (props) => {

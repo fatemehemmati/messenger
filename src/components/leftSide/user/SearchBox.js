@@ -1,6 +1,6 @@
 import React from 'react';
 import style from './SearchBox.module.css';
-import searchIcon from '../../assets/images/search.png';
+import searchIcon from '../../../assets/images/search.png';
 
 const SearchBox = () => {
   return (

@@ -1,9 +1,10 @@
 import React,{useState} from 'react'
-import Send from './Send';
+
 
 import style from './Inputs.module.css';
-import attachFileImg from '../../assets/images/attach-file.png';
-import UploadFile from './UploadFile';
+import attachFileImg from '../../assets/images/paperclip.png';
+import sendIcon from "../../assets/images/SendButton.png";
+
 const Inputs = (props) => {
   const [text, setText] = useState('');
     const clickHandler = () => {
@@ -26,7 +27,9 @@ const Inputs = (props) => {
         {console.log(text)}
       </div>
 
-      <Send />
+      <div>
+        <img className={style.sendImg} src={sendIcon} alt="" />
+      </div>
     </div>
   );
 }

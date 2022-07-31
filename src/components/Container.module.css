@@ -2,13 +2,19 @@
     display:grid;
     grid-template-columns: 4fr 11fr 1fr;
     column-gap: 5px;
-    width: 88%;
+    width: 80%;
     justify-self: center;
-    margin: 9px;
-  border:0.5px solid grey;
-    height:95vh;
-       border-radius: 10px;
-       margin-left: 74px;
+    padding: 5px;
+
+    height:90vh;
+       border-radius: 15px;
+       margin-right: auto;
+    margin-left: auto;
+    margin-top:20px;
+    margin-bottom: auto;
+    background-color: white;
+      border: 0.2px solid rgb(217, 215, 215);
+   
     
 }
 .leftSide{
@@ -18,14 +24,20 @@
 
  .containerMed{
        display:grid;
-    grid-template-columns: 4fr 8fr 4fr;
+    grid-template-columns: 4fr 9fr 3fr;
     column-gap: 5px;
-    width: 88%;
+    width: 80%;
     justify-self: center;
-    margin: 9px;
-  border:0.5px solid grey;
-    height:95vh;
-       border-radius: 10px;
-       margin-left: 74px;
+   
+    padding: 5px;
+
+    height:90vh;
+       border-radius: 15px;
+      margin-right: auto;
+    margin-left: auto;
+      margin-top:20px;
+    margin-bottom: auto;
+    background-color: white;
     
+      border: 0.2px solid rgb(217, 215, 215);
  }

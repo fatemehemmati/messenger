@@ -1,15 +1,12 @@
 .rightSide{
   display: flex;
     flex-direction: column;
-    justify-content: center;
-    text-align: center;
+  justify-content: flex-start;
+  
 }
 .arrow{
     margin: 15px;
     width: 35px;
-    border-radius: 50%/50%;
+   
     cursor:pointer;
-}
-.open{
-  
 }

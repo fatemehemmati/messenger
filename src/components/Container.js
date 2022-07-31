@@ -1,17 +1,15 @@
 
 import React, { useState } from "react";
 
-import ChatBox from "./middle/ChatBox";
-import Profile from "./user/Profile";
-import Contacts from "./user/Contacts";
-import RightSide from "./sideBar/RightSide";
+
+
+import RightSide from "./rightSide/RightSide";
 import UploadFile from "./middle/UploadFile";
 import style from "./Container.module.css";
-import Logo from "./Logo";
+
 
 import MiddleContainer from "./middle/MiddleContainer";
-
-
+import LeftContainer from "./leftSide/leftContainer";
 const Container = () => {
   const [page, setPage] = useState("chat");
   const [fullRightSide, setfullRightSide] = useState(false);
@@ -20,9 +18,7 @@ const Container = () => {
       className={`${fullRightSide ? style.containerMed : style.containerFull}`}
     >
       <div className={style.leftSide}>
-        <Logo />
-        <Profile />
-        <Contacts />
+       <LeftContainer />
       </div>
       <div> {page==='chat'?(<MiddleContainer  setPage={setPage} />): (
         <UploadFile changePage={(page) => setPage(page)} />

@@ -6,9 +6,7 @@ const Contacts = () => {
   return (
     <div className={style.container}>
       <SearchBox />
-      <div>  Contacts
-          .
-          .</div>
+      <div>  </div>
     
       </div>
   )

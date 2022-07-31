@@ -1,13 +1,25 @@
-.Message{
+.MessageLeft{
    border: 0.1 solid #000000; 
    border-radius: 1vh;
-   background-color: darkgrey;
-   width: 40%;
+   background-color: rgb(213, 222, 231);
+   width: max-content;
    padding: 4px;
-   margin-left: -4px;
-
+   margin-left: 4px;
+   margin-bottom: 4px;
+   border: 00.1px solid  rgb(203, 214, 224) ;
+  
 }
 .avatar{
    width:30px;
    border-radius: 50%/50%;
+}
+.messageRight{
+  border: 0.1 solid #000000; 
+   border-radius: 1vh;
+   background-color: rgb(30, 58, 150);
+   width: max-content;
+   padding: 4px;
+   margin-left: 4px;
+   margin-bottom: 4px; 
+   
 }

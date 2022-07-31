@@ -6,13 +6,13 @@ const People = () => {
   return (
     <div className={style.container}>
       <p>people</p>
-      <div >
+      <div className={style.contacts}>
         <img src={proPic} className={style.avatar} alt="" />
       </div>
-      <div>
+      <div className={style.contacts}>
         <img src={proPic} className={style.avatar} alt="" />
       </div>
-      <div>
+      <div className={style.contacts}>
         <img src={proPic} className={style.avatar} alt="" />
       </div>
     </div>

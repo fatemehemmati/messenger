@@ -5,8 +5,12 @@
    cursor: pointer;
 }
 .container{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+   
     height: 35%;
+        margin-left: 10px;
+     margin-right: 7px;
+     margin-bottom: 7px;
+}
+.contacts{
+    margin: 6px;
 }
