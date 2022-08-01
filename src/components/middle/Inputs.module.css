@@ -6,12 +6,13 @@
       border-radius:20px;
        width:90%;
        margin-left: 20PX;
-       
-       height: 7%;
+       height: 35px;
        display: flex;
        flex-direction: row;
        justify-content: space-between;
        background-color: white;
+       margin-bottom: 10px;
+       
     
 }
 .inputText{

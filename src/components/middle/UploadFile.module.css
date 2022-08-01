@@ -4,14 +4,22 @@
     display:block;
     margin:auto;
 }
-h1{
+h2{
     text-align: center;
+    color: rgb(33, 104, 74);
 }
 .container{
+
+ border: 0.5px solid rgb(197, 197, 197);
+ height: 85vh;
+ margin-top: 5px;
+ border-radius: 10px;
+}
+.stuffContainer{
     display: flex;
     flex-direction: column;
     justify-content: center;
-
+   
     margin-top: 70px;
 }
 label{
@@ -19,7 +27,7 @@ label{
     margin:auto;
 }
 .p{
-    color: rgb(76, 76, 220);
+    color: rgb(107, 179, 123);
     cursor: pointer;
 }
 .inputFile {

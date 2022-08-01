@@ -14,7 +14,7 @@
     margin-bottom: auto;
     background-color: white;
       border: 0.2px solid rgb(217, 215, 215);
-   
+     box-sizing: border-box; 
     
 }
 .leftSide{
@@ -38,6 +38,6 @@
       margin-top:20px;
     margin-bottom: auto;
     background-color: white;
-    
+      box-sizing: border-box; 
       border: 0.2px solid rgb(217, 215, 215);
  }

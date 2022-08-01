@@ -8,13 +8,13 @@ const UploadFile = (props) => {
     props.changePage("chat");
   }
   return (
-    <div>
+    <div className={style.container}>
       <div>
         <img onClick={clickCloseHandler} className={style.close} src={closeIcon} alt="" />
       </div>
-      <div className={style.container}>
+      <div className={style.stuffContainer}>
       <img className={style.img} src={attachFileImg} alt="" />
-      <h1>Upload file</h1>
+      <h2>Upload file</h2>
       <label htmlFor="inputFile">
        <p className={style.p}>browse</p> 
       </label>

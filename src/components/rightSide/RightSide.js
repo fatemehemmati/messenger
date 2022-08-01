@@ -27,11 +27,13 @@ const RightSide = (props) => {
      
       <People />
     
-      {props.showFull?<p>chat files</p>:<p>Files</p>} 
+      <div className={style.filesContainer}>
+        {props.showFull ? <p>chat files</p> : <p>Files</p>}
       <Files type="1" showFull={props.showFull} />
       <Files type="2" showFull={props.showFull} />
       <Files type="3" showFull={props.showFull} />
-      <Files type="4" showFull={props.showFull} />
+        <Files type="4" showFull={props.showFull} />
+      </div>
     </div>
   );
 }

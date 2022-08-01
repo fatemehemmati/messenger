@@ -32,8 +32,8 @@ const Files = (props) => {
   
 )
   return (
-    <div className={`${style.container} ${style.flexItem}`}>
-      {props.showFull && title}
+    <div className={`${style.container} `}>
+      <p>{props.showFull && title}</p>
 
       <div className={`${style.fileItems}  ${style.flexItem}`}>
         <img className={`${style.icons} `} src={icon} alt="" />
