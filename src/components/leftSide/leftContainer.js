@@ -2,13 +2,14 @@ import React from 'react'
 import Profile from "./user/Profile";
 import Contacts from "./user/Contacts";
 import Logo from "./Logo";
-const leftContainer = () => {
+const leftContainer = (props) => {
+ console.log(props)
   return (
     <div>
      
       <Logo />
       <Profile />
-      <Contacts />
+      <Contacts  contacts={props.contacts} />
     </div>
   );
 }
