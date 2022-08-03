@@ -1,6 +1,6 @@
 .containerFull{
     display:grid;
-    grid-template-columns: 4fr 11fr 1fr;
+    grid-template-columns: 5fr 11fr 1fr;
     column-gap: 5px;
     width: 80%;
     justify-self: center;
@@ -24,7 +24,7 @@
 
  .containerMed{
        display:grid;
-    grid-template-columns: 4fr 9fr 3fr;
+    grid-template-columns: 5fr 8fr 3fr;
     column-gap: 5px;
     width: 80%;
     justify-self: center;

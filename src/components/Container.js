@@ -16,17 +16,19 @@ const Container = () => {
   const [contacts, setContacts] = useState([]);
 
   const fetchUsersHandler = () => {
-    fetch("http://localhost:1337/api/contacts")
+    fetch("http://localhost:1337/api/contacts?populate=*")
       .then(res => {
         return res.json();
       }).then(response => {
-        const transformedcontacts = response.data.map((contactData) => {
-          return {
+        const transformedcontacts = response.data.filter((e)=>e.id !== 1).map((contactData) => {
+           return {
             id: contactData.id,
             firstname: contactData.attributes.FirstName,
-            username: `${contactData.FirstName}' '${contactData.LastName}`,
-            online: contactData.IsOnline,
-          };
+            username: `${contactData.attributes.FirstName} ${contactData.attributes.LastName}`,
+            online: contactData.attributes.IsOnline,
+            avatar: contactData.attributes.ProfileIcon
+        }
+         
         });
        setContacts(transformedcontacts)
       })

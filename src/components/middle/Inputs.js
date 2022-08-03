@@ -13,7 +13,11 @@ const Inputs = (props) => {
   const onChangeHandler = (e) => {
   setText(e.target.value)
 }
- 
+  const sendHandler = () => {
+    if (text.length > 0) {
+  
+   }
+ }
   return (
     <div className={style.inputContainer}>
       <input
@@ -28,7 +32,7 @@ const Inputs = (props) => {
       </div>
 
       <div>
-        <img className={style.sendImg} src={sendIcon} alt="" />
+        <img onClick={sendHandler} className={style.sendImg} src={sendIcon} alt="" />
       </div>
     </div>
   );

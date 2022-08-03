@@ -1,13 +1,17 @@
 import React from 'react'
-import avatar from "../../../assets/images/Profile_avatar_placeholder.png";
 import style from './Profile.module.css';
+import {getUser} from '../../user';
 
 const Profile = () => {
+  const user = getUser();
+  console.log(user.avatar)
   return (
     <>
-      <div className={style.container}> <img className={style.avatar} src={avatar} alt="" />
-      <div className={style.character}><p><strong>username</strong></p>
-        <p>field</p></div>
+      <div className={style.container}> <img className={user.avatar} src={user.avatar} alt="" />
+        <div className={style.character}><p>{user.username}
+          <br />
+      <p className={style.field}>{user.field}</p>  
+        </p></div>
       </div>
      
     </>
