@@ -9,7 +9,7 @@ import style from "./Container.module.css";
 
 
 import MiddleContainer from "./middle/MiddleContainer";
-import LeftContainer from "./leftSide/leftContainer";
+import LeftContainer from "./leftSide/LeftContainer";
 const Container = () => {
   const [page, setPage] = useState("chat");
   const [fullRightSide, setfullRightSide] = useState(false);

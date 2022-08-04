@@ -5,9 +5,7 @@ import "./assets/global.css";
 
 function App() {
   return (
-  
-    <div >
-     
+    <div>
       <Container />
     </div>
   );

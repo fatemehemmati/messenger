@@ -26,8 +26,6 @@ const Files = (props) => {
       setTitle('videos');
       setIcon(videoIcon);
     }
-
-    console.log(props.showFull)
       }
   
 )

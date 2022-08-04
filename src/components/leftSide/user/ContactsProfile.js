@@ -2,6 +2,7 @@ import React, { useEffect,useState } from 'react';
 import style from './ContactsProfile.module.css';
 
 const ContactsProfile = (props) => {
+  const [chatPage, setChatPage] = useState(1);
   const createChat = () => {
     fetch("http://localhost:1337/api/chats?populate=*", {
       method: "POST",
@@ -18,21 +19,28 @@ const ContactsProfile = (props) => {
       },
     });
   }
-  const onClickHandler=()=>{
-   fetch("http://localhost:1337/api/chats?populate=*", {
-     method: "POST",
-     body: JSON.stringify({
-       data: {
-         Title: props.contact.username,
-         Owner: 1,
-         Contact: props.contact.id,
-       },
-     }),
-     headers: {
-       "Content-Type": "application/json",
-       Accept: "application/json",
-     },
-   });
+  const chatExist = (id) => {
+ 
+    fetch("http://localhost:1337/api/chats?populate=*")
+      .then(res => {
+        return res.json();
+      }).then(response => {
+        const chat = response.data.find((element) => {
+          console.log(element.attributes);
+         return element.attributes.Contact.data.attributes.id === id;
+        })
+          
+        return chat;
+      })
+  }
+ 
+  const onClickHandler = () => {
+    if(chatExist(props.contact.id)) {
+    return chatExist(props.contact.id);
+    } else {
+    return createChat();
+    }
+ 
  }
   return (
     <>

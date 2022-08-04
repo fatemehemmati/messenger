@@ -6,7 +6,7 @@ export function getUser() {
                   username: `Bernadette Hansley`,
                   online: true,
                   avatar: {avatar} ,
-                  field:'Senio Ui/Ux designer'
+                  field:'Senior Ui/Ux designer'
                 };
          
        

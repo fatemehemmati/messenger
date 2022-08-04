@@ -7,14 +7,10 @@ const ChatBox = (props) => {
   return (
     <div>
       <div className={style.ChatBox}>
-       
-        {props.messages.map((e) => ( <Message text={e} reciever={props} />)
         
-      )}
-       
-      
+        {props.messages.map((e) => ( <Message text={e} reciever={props} />)
+      )}  
       </div>
-   
     </div>
   );
 }
