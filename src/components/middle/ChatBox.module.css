@@ -1,10 +1,19 @@
 .ChatBox{
    height: 60vh;
-    padding: 5px;
   
-     display: flex;
-   justify-content: flex-end;
-   flex-direction: column;
+   
+}
+.chatTitle{
+height: 10vh;
+width: 100%;
+border-top-right-radius:  1rem;
+border-top-left-radius:  1rem;
+background-color: rgb(232, 235, 240);
+border-bottom: 0.2px solid rgb(206, 206, 213);
+margin-top: -10px;
+}
+.contactName{
+   margin: 10px;
 }
 
 

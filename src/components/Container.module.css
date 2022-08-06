@@ -1,18 +1,19 @@
 .containerFull{
   display: grid;
-  grid-template-columns: 4fr 6fr 1fr ;
+  grid-template-columns: 3fr 8fr 1fr ;
     column-gap: 5px;
     width: 80vw;
-    height:85vh;
+    height:90vh;
     justify-self: center;
     padding: 5px;
-    border-radius: 15px;
+    border-radius: 2rem;
     margin-right: auto;
     margin-left: auto;
     margin-top:20px;
     margin-bottom: auto;
     background-color: white;
     border: 0.2px solid rgb(217, 215, 215);
+  
     box-sizing: border-box;   
 }
 .leftSide{
@@ -22,10 +23,10 @@
 
  .containerMed{
    display: grid;
-   grid-template-columns: 4fr 5fr 2fr;
+   grid-template-columns: 3fr 6fr 3fr;
     width: 80vw;
     padding: 5px;
-    height:85vh;
+    height:90vh;
     border-radius: 15px;
     margin-right: auto;
     margin-left: auto;

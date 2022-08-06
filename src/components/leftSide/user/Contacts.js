@@ -10,11 +10,15 @@ const Contacts = (props) => {
     <div className={style.container}>
       <SearchBox />
       <div className={style.contactsList}>
-        {contacts.map(element =>  <ContactsProfile contact={element} />)}
+        {contacts.map((element) => (
+          <ContactsProfile
+            chatPage={props.chatPage}
+            changeChatPage={props.changeChatPage}
+            contact={element}
+          />
+        ))}
       </div>
-        
-      </div>
-  
+    </div>
   );
 }
 

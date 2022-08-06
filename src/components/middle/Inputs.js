@@ -6,29 +6,25 @@ import attachFileImg from '../../assets/images/paperclip.png';
 import sendIcon from "../../assets/images/SendButton.png";
 
 const Inputs = (props) => {
-  const [text, setText] = useState('');
+
     const clickHandler = () => {
      props.changePage("upload");
   };
-  const onChangeHandler = (e) => {
-  setText(e.target.value)
-}
-  const sendHandler = () => {
-    if (text.length > 0) {
-  
-   }
+
+  const sendHandler = (e) => {
+    if (e.target.value.length > 0) {
+      props.setMessage(e.target.value)
+    }
  }
   return (
     <div className={style.inputContainer}>
       <input
         className={style.inputText}
         type="text"
-        value={text}
-        onChange={onChangeHandler}
+        onChange={sendHandler}
       />
       <div onClick={clickHandler}>
         <img src={attachFileImg} className={style.fileImg} alt="" />
-        {console.log(text)}
       </div>
 
       <div>

@@ -2,7 +2,7 @@ import React, { useEffect,useState } from 'react';
 import style from './ContactsProfile.module.css';
 
 const ContactsProfile = (props) => {
-  const [chatPage, setChatPage] = useState(1);
+ 
   const createChat = () => {
     fetch("http://localhost:1337/api/chats?populate=*", {
       method: "POST",
@@ -17,31 +17,38 @@ const ContactsProfile = (props) => {
         "Content-Type": "application/json",
         Accept: "application/json",
       },
+    }).then(res => {
+      return res.json();
+    }).then(response => {
+   
+      const chat = response.data;
+     props.changeChatPage(chat);
     });
   }
-  const chatExist = (id) => {
- 
-    fetch("http://localhost:1337/api/chats?populate=*")
-      .then(res => {
-        return res.json();
-      }).then(response => {
-        const chat = response.data.find((element) => {
-          console.log(element.attributes);
-         return element.attributes.Contact.data.attributes.id === id;
-        })
-          
-        return chat;
-      })
-  }
- 
   const onClickHandler = () => {
-    if(chatExist(props.contact.id)) {
-    return chatExist(props.contact.id);
-    } else {
-    return createChat();
-    }
+    const { contact } = props;
+    fetch("http://localhost:1337/api/chats?populate=*")
+      .then((res) => {
+        return res.json();
+      })
+      .then((response) => {
+     
+        const chat = response.data.find((element) => {
+         
+          return element.attributes.Contact.data.id === contact.id;
+        });
+
+        if (chat) {
+       
+          props.changeChatPage(chat);
+         
+        } else {
+          createChat();
+        }
+      });
+  };
  
- }
+
   return (
     <>
       <div onClick={onClickHandler} className={style.container}>
