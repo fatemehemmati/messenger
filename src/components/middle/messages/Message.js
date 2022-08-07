@@ -7,7 +7,7 @@ const Message = (prop) => {
  
   return (
     <div className={prop.reciever?style.MessageLeft:style.messageRight}>
-     {prop.text}
+     {prop.message}
     </div>
   );
 }

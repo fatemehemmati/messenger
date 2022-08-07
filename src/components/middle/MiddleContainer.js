@@ -1,15 +1,15 @@
-import React from 'react'
+import React,{useState} from 'react'
 import ChatBox from './ChatBox';
 import Inputs from './Inputs';
 import style from './MiddleContainer.module.css'
 const MiddleContainer = (props) => {
-  const messageList = ['hello darkness', ' my old friend', 'Ive come to talk with  you again ', 'because a vision softly creeping', 'left its seeds while i was sleeping'];
-  console.log(props.ChatPage,"middle container")
+    const [message, setMessage] = useState("");
+
   return (
     <div className={style.middle}>
-      <ChatBox ChatPage={props.ChatPage} messages={messageList} />
+      <ChatBox ChatPage={props.ChatPage} message={message} />
     
-      <Inputs changePage={(page) => props.setPage(page)} />
+      <Inputs changePage={(page) => props.setPage(page)} setMessage={(msg)=>setMessage(msg)} />
     </div>
   );
 }

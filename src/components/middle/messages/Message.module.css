@@ -15,11 +15,13 @@
 }
 .messageRight{
   border: 0.1 solid #000000; 
-   border-radius: 1vh;
-   background-color: rgb(30, 58, 150);
+   border-top-right-radius: 0.5rem;
+   border-bottom-right-radius:0.5rem;
+   background-color: #85c230;
    width: max-content;
    padding: 4px;
-   margin-left: 4px;
+   margin-left: 2px;
    margin-bottom: 4px; 
+   margin-top: 1vh;
    
 }

@@ -6,29 +6,64 @@ import attachFileImg from '../../assets/images/paperclip.png';
 import sendIcon from "../../assets/images/SendButton.png";
 
 const Inputs = (props) => {
-
+  const [inputText, setInputText] = useState('');
+const sendMessage = () => {
+   fetch(
+     "http://localhost:1337/api/messages?filters[chat][id][$eq]=2&populate=*",
+     {
+       method: "POST",
+       body: JSON.stringify({
+         data: {
+           Text: inputText,
+           Owner: 1,
+           chat: props.ChatPage,
+         },
+       }),
+       headers: {
+         "Content-Type": "application/json",
+         Accept: "application/json",
+       },
+     }
+   )
+     .then((res) => {
+       return res.json();
+     })
+     .then((response) => {
+       console.log(response);
+     });
+ };
     const clickHandler = () => {
      props.changePage("upload");
   };
 
-  const sendHandler = (e) => {
-    if (e.target.value.length > 0) {
-      props.setMessage(e.target.value)
-    }
- }
+  const saveMessageHandler = (e) => {
+    setInputText(e.target.value)
+   
+  }
+  const sendHandler = () => {
+     props.setMessage(inputText);
+  }
+ console.log(inputText,`input text`)
   return (
     <div className={style.inputContainer}>
       <input
         className={style.inputText}
         type="text"
-        onChange={sendHandler}
+        name="message"
+        onChange={saveMessageHandler}
+        value={inputText}
       />
       <div onClick={clickHandler}>
         <img src={attachFileImg} className={style.fileImg} alt="" />
       </div>
 
       <div>
-        <img onClick={sendHandler} className={style.sendImg} src={sendIcon} alt="" />
+        <img
+          onClick={sendMessage}
+          className={style.sendImg}
+          src={sendIcon}
+          alt=""
+        />
       </div>
     </div>
   );
