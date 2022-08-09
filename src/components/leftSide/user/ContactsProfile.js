@@ -1,8 +1,8 @@
-import React, { useEffect,useState } from 'react';
+import React from 'react';
 import style from './ContactsProfile.module.css';
 
 const ContactsProfile = (props) => {
- 
+ //=======CREATING CHAT====== //
   const createChat = () => {
     fetch("http://localhost:1337/api/chats?populate=*", {
       method: "POST",
@@ -22,9 +22,11 @@ const ContactsProfile = (props) => {
     }).then(response => {
    
       const chat = response.data;
+
      props.changeChatPage(chat);
     });
   }
+  //====CHEKING IF CHAT EXIST======
   const onClickHandler = () => {
     const { contact } = props;
     fetch("http://localhost:1337/api/chats?populate=*")
@@ -32,16 +34,22 @@ const ContactsProfile = (props) => {
         return res.json();
       })
       .then((response) => {
-     
+      
         const chat = response.data.find((element) => {
-         
           return element.attributes.Contact.data.id === contact.id;
         });
 
+        
+
         if (chat) {
-       
           props.changeChatPage(chat);
-         
+           setTimeout(() => {
+             const openChat = new CustomEvent("showChat", {
+               detail: {
+                 chatId: chat.id
+             }});
+             window.dispatchEvent(openChat);
+           }, 300);
         } else {
           createChat();
         }

@@ -11,15 +11,15 @@
     width: 100%;
     padding: 4px;
     margin-left: -4px;
-    height:11vh;
+    height:11vh;margin-bottom: 2vh;
   
 }
 .character{
-  
+
    margin-top: 6px;
 }
 .field{
-   margin-top: -1px;
+   margin-top: -6px;
    font-size: small;
    opacity: 70%;
 }

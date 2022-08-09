@@ -12,7 +12,7 @@ const leftContainer = (props) => {
         <Logo />
       </div>
       <div className={style.profile}>
-        <Profile />
+        <Profile user={props.user}/>
       </div>
       <div className={style.contacts}>
         <Contacts

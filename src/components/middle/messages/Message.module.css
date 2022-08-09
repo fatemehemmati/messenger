@@ -1,12 +1,15 @@
 .MessageLeft{
    border: 0.1 solid #000000; 
-   border-radius: 1vh;
+   border-radius: 0.4rem;
    background-color: rgb(213, 222, 231);
    width: max-content;
    padding: 4px;
    margin-left: 4px;
    margin-bottom: 4px;
+   margin-right: 0.5vw;
    border: 00.1px solid  rgb(203, 214, 224) ;
+  float: left;
+   
   
 }
 .avatar{
@@ -14,14 +17,24 @@
    border-radius: 50%/50%;
 }
 .messageRight{
-  border: 0.1 solid #000000; 
-   border-top-right-radius: 0.5rem;
-   border-bottom-right-radius:0.5rem;
-   background-color: #85c230;
+   border: 0.1px solid #77af58; 
+   border-radius: 0.4rem;
+   background-color: #98c954;
    width: max-content;
    padding: 4px;
-   margin-left: 2px;
-   margin-bottom: 4px; 
-   margin-top: 1vh;
+   margin-left: 0.5vw;
+   margin-bottom: 0.2vw; 
+   margin-top: 0.2vw;
+    float: right;
    
+}
+.container{
+  display: flex;
+  flex-direction: row; 
+  justify-content: flex-start;
+}
+.containerLeft{
+   display: flex;
+  flex-direction: row; 
+  justify-content: flex-end;
 }

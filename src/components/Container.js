@@ -1,25 +1,29 @@
 import React, { useEffect, useState } from "react";
-
 import RightSide from "./rightSide/RightSide";
 import UploadFile from "./middle/UploadFile";
 import style from "./Container.module.css";
-
+import {getUser} from './user'
 import MiddleContainer from "./middle/MiddleContainer";
 import LeftContainer from "./leftSide/LeftContainer";
+
 const Container = () => {
   const [page, setPage] = useState("chat");
   const [fullRightSide, setfullRightSide] = useState(false);
   const [contacts, setContacts] = useState([]);
   const [chatPage, setChatPage] = useState("");
+   const [user, setUser] = useState(null);
 
+   
   const fetchUsersHandler = () => {
     fetch("http://localhost:1337/api/contacts?populate=*")
       .then((res) => {
         return res.json();
       })
-      .then((response) => {
+      .then(async (response) => {
+        let user = await getUser();
+        setUser(user);
         const transformedcontacts = response.data
-          .filter((e) => e.id !== 1)
+          .filter((e) => e.id !== user.id)
           .map((contactData) => {
             return {
               id: contactData.id,
@@ -34,13 +38,16 @@ const Container = () => {
   };
   useEffect(() => {
     fetchUsersHandler();
+   
   }, []);
+   console.log(contacts, "contacts");
   return (
     <div
       className={`${fullRightSide ? style.containerMed : style.containerFull}`}
     >
       <div className={style.leftSide}>
         <LeftContainer
+          user={user}
           contacts={contacts}
           changeChat={(chat) => setChatPage(chat)}
           chatPage={chatPage}
@@ -49,8 +56,7 @@ const Container = () => {
 
       <div>
         {page === "chat" ? (
-          <MiddleContainer setPage={setPage} ChatPage={chatPage} />
-      
+          <MiddleContainer user={user} setPage={setPage} ChatPage={chatPage} />
         ) : (
           <UploadFile changePage={(page) => setPage(page)} />
         )}

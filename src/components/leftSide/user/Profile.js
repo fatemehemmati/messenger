@@ -1,21 +1,24 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import style from './Profile.module.css';
-import avatar from "../../../assets/images/user6.jpg";
+
 import {getUser} from '../../user';
 
-const Profile = () => {
-  const user = getUser();
+const Profile = (prop) => {
+  const { user } = prop;
   return (
     <>
-      <div className={style.container}> <img className={style.avatar} src={avatar} alt="" />
-        <div className={style.character}><p>{user.username}
-          <br />
-      <p className={style.field}>{user.field}</p>  
-        </p></div>
-      </div>
-     
+      {user && (
+        <div className={style.container}>
+          {" "}
+          <img className={style.avatar} src={user ? user.avatar : ""} alt="" />
+          <div className={style.character}>
+            <p>{user.username}</p>
+            <p className={style.field}>{user.field}</p>
+          </div>
+        </div>
+      )}
     </>
-  )
+  );
 }
 
 export default Profile;

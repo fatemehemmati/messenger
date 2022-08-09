@@ -9,3 +9,16 @@
   /* width: 50vw; */
   background-color: rgb(245, 245, 248);
 }
+.default{
+  text-align: center;
+  padding-top: 30vh;
+  background-color: rgb(244, 244, 246);
+  height: 85vh;
+  border-radius: 1rem;
+  border:0.2px solid rgb(221, 219, 219)
+}
+
+.defaultText{
+  color: rgb(112, 190, 69);
+}
+
