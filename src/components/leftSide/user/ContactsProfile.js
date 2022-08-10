@@ -1,7 +1,9 @@
-import React from 'react';
+import React,{useState} from 'react';
 import style from './ContactsProfile.module.css';
+import Modal from '../../ui/Modal';
 
 const ContactsProfile = (props) => {
+   const [error, setError] = useState(null);
  //=======CREATING CHAT====== //
   const createChat = () => {
     fetch("http://localhost:1337/api/chats?populate=*", {
@@ -53,6 +55,8 @@ const ContactsProfile = (props) => {
         } else {
           createChat();
         }
+      }).catch((error) => {
+        setError('something went wrong(in fetching chats)')
       });
   };
  
@@ -70,6 +74,7 @@ const ContactsProfile = (props) => {
         />
         <p className={style.username}>{props.contact.firstname}</p>
       </div>
+      {error && <Modal text={error} changeModal={(stat) => setError(stat)} />}
     </>
   );
 }

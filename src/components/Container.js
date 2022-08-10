@@ -5,13 +5,15 @@ import style from "./Container.module.css";
 import {getUser} from './user'
 import MiddleContainer from "./middle/MiddleContainer";
 import LeftContainer from "./leftSide/LeftContainer";
+import Modal from "./ui/Modal";
 
 const Container = () => {
   const [page, setPage] = useState("chat");
   const [fullRightSide, setfullRightSide] = useState(false);
   const [contacts, setContacts] = useState([]);
   const [chatPage, setChatPage] = useState("");
-   const [user, setUser] = useState(null);
+  const [user, setUser] = useState(null);
+  const [error, setError] = useState(null);
 
    
   const fetchUsersHandler = () => {
@@ -19,9 +21,10 @@ const Container = () => {
       .then((res) => {
         return res.json();
       })
-      .then(async (response) => {
+      .then(async (response) => { 
         let user = await getUser();
         setUser(user);
+
         const transformedcontacts = response.data
           .filter((e) => e.id !== user.id)
           .map((contactData) => {
@@ -34,13 +37,15 @@ const Container = () => {
             };
           });
         setContacts(transformedcontacts);
+      }).catch((error) => {
+     setError('something went wrong');
       });
   };
   useEffect(() => {
     fetchUsersHandler();
    
   }, []);
-   console.log(contacts, "contacts");
+   
   return (
     <div
       className={`${fullRightSide ? style.containerMed : style.containerFull}`}
@@ -68,6 +73,7 @@ const Container = () => {
           showFull={fullRightSide}
         />
       </div>
+      {error && <Modal text={error}  changeModal={(stat)=>setError(stat)} />}
     </div>
   );
 };

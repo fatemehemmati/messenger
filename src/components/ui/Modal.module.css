@@ -1,0 +1,55 @@
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 20;
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+.modal {
+  height: 30vh;
+  position: fixed;
+  top: 30vh;
+  left: 5%;
+  width: 40vw;
+  background-color: rgb(245, 201, 200);
+  padding: 1rem;
+  border-radius: 14px;
+  box-shadow: 0 2px 8px rgba(226, 112, 112, 0.25);
+  z-index: 30;
+  animation: slide-down 300ms ease-out forwards;
+}
+.errorMessage{
+  text-align: center;
+  margin-top: 7vh;
+  font-size: large;
+}
+.button{
+  width: 6vw;
+  height: 6vh;
+  border-radius: 0.5rem;
+  margin-left: 14vw;
+  margin-top: 4vh;
+  border: 0.2px solid rgb(215, 215, 153);
+ box-shadow: 0 2px 8px rgba(226, 112, 112, 0.25);
+ cursor: pointer;
+}
+@media (min-width: 768px) {
+  .modal {
+    width: 30rem;
+    left: calc(56% - 20rem);
+  }
+}
+
+@keyframes slide-down {
+  from {
+    opacity: 0;
+    transform: translateY(-3rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -4,7 +4,7 @@ import ContactsProfile from './ContactsProfile';
 import searchIcon from "../../../assets/images/Path67.png";
 
 const Contacts = (props) => {
-  const [searchInput, setSearchInput] = useState(null);
+  const [searchInput, setSearchInput] = useState('');
   const [searchResault, setSearchResault] = useState([]);
   
   const { contacts } = props;
@@ -14,13 +14,13 @@ const Contacts = (props) => {
     setSearchInput(e.target.value);
 
     let res =contacts.filter((value) => {
-     return value.username.includes(e.target.value)
+     return value.username.toLowerCase().includes(e.target.value)
     })
     
     setSearchResault(res);
     
   }
-console.log(contacts,"contactsssssssss")
+
   return (
     <div>
       <div className={style.searchBoxcontainer}>

@@ -1,17 +1,15 @@
-import React, {  useState } from "react";
-
+import React, { useState } from "react";
+import Modal from "../ui/Modal";
 import style from "./Inputs.module.css";
 import attachFileImg from "../../assets/images/paperclip.png";
 import sendIcon from "../../assets/images/SendButton.png";
 
 const Inputs = (props) => {
-  
   const [inputText, setInputText] = useState("");
- 
+  const [error, setError] = useState(null);
 
   const sendMessage = () => {
-    console.log(props.ChatPage.id.data,"new msggggggggg");
-    fetch("http://localhost:1337/api/messages?populate=*", {
+    fetch("http://localhost:1337/ap/essages?populate=*", {
       method: "POST",
       body: JSON.stringify({
         data: {
@@ -30,7 +28,10 @@ const Inputs = (props) => {
       })
       .then((response) => {
         props.addMessage((current) => [...current, response.data]);
-       setInputText('');
+        setInputText("");
+      })
+      .catch((error) => {
+        setError("something went wrong (sending message)");
       });
   };
   const clickHandler = () => {
@@ -62,6 +63,7 @@ const Inputs = (props) => {
           alt=""
         />
       </div>
+      {error && <Modal text={error} changeError={(stat) => setError(stat)} />}
     </div>
   );
 };

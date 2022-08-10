@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import style from './Profile.module.css';
-
+import Modal from '../../ui/Modal';
 import {getUser} from '../../user';
 
 const Profile = (prop) => {
   const { user } = prop;
   return (
-    <>
+    <div>
       {user && (
         <div className={style.container}>
           {" "}
@@ -17,7 +17,7 @@ const Profile = (prop) => {
           </div>
         </div>
       )}
-    </>
+    </div>
   );
 }
 
