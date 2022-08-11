@@ -6,7 +6,7 @@ const ContactsProfile = (props) => {
    const [error, setError] = useState(null);
  //=======CREATING CHAT====== //
   const createChat = () => {
-    fetch("http://localhost:1337/api/chats?populate=*", {
+    fetch("http://localhost:1337/api/chatssort[0]=fieldName:DESC?populate=*", {
       method: "POST",
       body: JSON.stringify({
         data: {
@@ -19,14 +19,15 @@ const ContactsProfile = (props) => {
         "Content-Type": "application/json",
         Accept: "application/json",
       },
-    }).then(res => {
-      return res.json();
-    }).then(response => {
-   
-      const chat = response.data;
+    })
+      .then((res) => {
+        return res.json();
+      })
+      .then((response) => {
+        const chat = response.data;
 
-     props.changeChatPage(chat);
-    });
+        props.changeChatPage(chat);
+      });
   }
   //====CHEKING IF CHAT EXIST======
   const onClickHandler = () => {

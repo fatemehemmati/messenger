@@ -1,19 +1,28 @@
 .rightSide{
   display: flex;
-    flex-direction: column;
+  flex-direction: column;
   justify-content: flex-start;
-  /* width: 15vw; */
-  
 }
 .arrow{
     margin: 15px;
+    margin-top: 4.2vh;
     width: 35px;
-   
     cursor:pointer;
 }
 .filesContainer{
   display: flex;
   justify-content: center;
   flex-direction: column;
-  text-align: center;
+  margin-left: 18px;
+  margin-top: -3px;
+  
+}
+.peopleContainer{
+  margin-top: -3vh;
+}
+.openP{
+
+}
+.closeP{
+
 }

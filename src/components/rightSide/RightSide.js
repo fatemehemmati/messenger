@@ -24,11 +24,11 @@ const RightSide = (props) => {
           alt=""
         />
       </div>
+     <div className={style.peopleContainer}> <People /></div>
      
-      <People />
     
       <div className={style.filesContainer}>
-        {props.showFull ? <p>chat files</p> : <p>Files</p>}
+        {props.showFull ? <p className={style.openP}>chat files</p> : <p className={style.closeP}>Files</p>}
       <Files type="1" showFull={props.showFull} />
       <Files type="2" showFull={props.showFull} />
       <Files type="3" showFull={props.showFull} />

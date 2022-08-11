@@ -9,7 +9,7 @@ const Inputs = (props) => {
   const [error, setError] = useState(null);
 
   const sendMessage = () => {
-    fetch("http://localhost:1337/ap/essages?populate=*", {
+    fetch("http://localhost:1337/api/messages?populate=*", {
       method: "POST",
       body: JSON.stringify({
         data: {

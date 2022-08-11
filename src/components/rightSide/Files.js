@@ -30,12 +30,12 @@ const Files = (props) => {
   
 )
   return (
-    <div className={`${style.container} `}>
-      <p>{props.showFull && title}</p>
-
-      <div className={`${style.fileItems}  ${style.flexItem}`}>
-        <img className={`${style.icons} `} src={icon} alt="" />
+    <div className={style.container}>
+      <p className={style.type}>{props.showFull && title}</p>
+      <div className={style.fileItems}>
+        <img className={style.icons} src={icon} alt="" />
       </div>
+      
     </div>
   );
 }

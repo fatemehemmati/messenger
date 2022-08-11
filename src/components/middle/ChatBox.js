@@ -8,15 +8,16 @@ const ChatBox = (props) => {
 
   const getCurrentChatMessages = (chatId) => {
     fetch(
-      `http://localhost:1337/api/messages?filters[chat][id][$eq=${chatId}&populate=*`
+      `http://localhost:1337/api/messages?filters[chat][id][$eq=${chatId}&sort[0]=publishedAt:ASC&populate=*`
     )
       .then((res) => {
         return res.json();
       })
       .then((response) => {
         props.addMessage(response.data);
-      }).catch((error) => {
-        setError('something went wrong (in loading messages)')
+      })
+      .catch((error) => {
+        setError("something went wrong (in loading messages)");
       });
   };
   useEffect(() => {
@@ -26,21 +27,23 @@ const ChatBox = (props) => {
   }, []);
 
   return (
-    <div>
+    <>
       <div className={style.ChatBox}>
         <div className={style.chatTitle}>
           <p className={style.contactName}>
             {props.ChatPage.attributes ? props.ChatPage.attributes.Title : " "}
           </p>
         </div>
-        <div className={style.chatList}>
-          {allMessages.map((element, index) => (
-            <Message user={props.user} key={index} message={element} />
-          ))}
+        <div className={style.chats}>
+          <div className={style.chatList}>
+            {allMessages.map((element, index) => (
+              <Message user={props.user} key={index} message={element} />
+            ))}
+          </div>
         </div>
       </div>
       {error && <Modal text={error} changeModal={(stat) => setError(stat)} />}
-    </div>
+    </>
   );
 };
 export default ChatBox;

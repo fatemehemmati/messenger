@@ -1,29 +1,26 @@
 .icons{
-   
     cursor: pointer;
-    margin-left: 3px;
-    margin-bottom: 9px;
-    margin-top:9px;
+    width: 18px;
+    margin-top: 7px; 
+    margin-left: 8px;
 }
 .container{
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content:left;
-    
-
+display: flex; 
+flex-direction: row-reverse;
+height: 9vh;
+justify-content: flex-end;
 }
-.flexItem{
-     margin-left: 8px;
-     margin-right: 7px;
-    
-
+.fileContainer{
+margin-top: -3px;
 
 }
 .fileItems{
-     margin-top:7px;
-background-color: rgb(241, 241, 243);
-border-radius: 50%/50%;
-width:35px;
-
-
+background-color: rgba(154, 154, 169, 0.234);
+width: 35px;
+height:35px;
+border-radius: 50%;
+}
+.type{
+    margin-top: 5px;
+    margin-left: 8px;
 }
