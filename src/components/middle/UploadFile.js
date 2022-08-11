@@ -3,9 +3,9 @@ import attachFileImg from "../../assets/images/paperclip@2x.png";
 import closeIcon from "../../assets/images/close.png"
 import style from './UploadFile.module.css';
 const UploadFile = (props) => {
-  
+  const { changePage } = props;
   const clickCloseHandler = () => {
-    props.changePage("chat");
+    changePage("chat");
   }
   return (
     <div className={style.container}>

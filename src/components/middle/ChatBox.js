@@ -3,7 +3,7 @@ import style from "./ChatBox.module.css";
 import Message from "./messages/Message";
 import Modal from "../ui/Modal";
 const ChatBox = (props) => {
-  const { allMessages } = props;
+  const { allMessages, addMessage, ChatPage, user } = props;
   const [error, setError] = useState(null);
 
   const getCurrentChatMessages = (chatId) => {
@@ -14,7 +14,7 @@ const ChatBox = (props) => {
         return res.json();
       })
       .then((response) => {
-        props.addMessage(response.data);
+        addMessage(response.data);
       })
       .catch((error) => {
         setError("something went wrong (in loading messages)");
@@ -31,13 +31,13 @@ const ChatBox = (props) => {
       <div className={style.ChatBox}>
         <div className={style.chatTitle}>
           <p className={style.contactName}>
-            {props.ChatPage.attributes ? props.ChatPage.attributes.Title : " "}
+            {ChatPage.attributes ? ChatPage.attributes.Title : " "}
           </p>
         </div>
         <div className={style.chats}>
           <div className={style.chatList}>
             {allMessages.map((element, index) => (
-              <Message user={props.user} key={index} message={element} />
+              <Message user={user} key={index} message={element} />
             ))}
           </div>
         </div>

@@ -1,15 +1,14 @@
 import React from 'react'
-
 import style from './RightSide.module.css';
-
 import People from './People';
 import Files from './Files';
-
 import arrow from "../../assets/images/Button.Arrow.png";
 import arrow2 from "../../assets/images/Button.Arrow - Copy.png";
+
 const RightSide = (props) => {
+  const { showFull, changeShowFull } = props;
     const clickArrowHandler = () => {
-      props.changeShowFull(!props.showFull);
+      changeShowFull(!showFull);
       
     }
   return (
@@ -20,7 +19,7 @@ const RightSide = (props) => {
         <img
           onClick={clickArrowHandler}
           className={style.arrow}
-          src={props.showFull?arrow:arrow2}
+          src={showFull?arrow:arrow2}
           alt=""
         />
       </div>
@@ -29,10 +28,10 @@ const RightSide = (props) => {
     
       <div className={style.filesContainer}>
         {props.showFull ? <p className={style.openP}>chat files</p> : <p className={style.closeP}>Files</p>}
-      <Files type="1" showFull={props.showFull} />
-      <Files type="2" showFull={props.showFull} />
-      <Files type="3" showFull={props.showFull} />
-        <Files type="4" showFull={props.showFull} />
+      <Files type="1" showFull={showFull} />
+      <Files type="2" showFull={showFull} />
+      <Files type="3" showFull={showFull} />
+        <Files type="4" showFull={showFull} />
       </div>
     </div>
   );

@@ -9,7 +9,6 @@ h2{
     color: rgb(33, 104, 74);
 }
 .container{
-
  border: 0.5px solid rgb(197, 197, 197);
  height: 85vh;
  margin-top: 5px;
@@ -31,9 +30,7 @@ label{
     cursor: pointer;
 }
 .inputFile {
-
    display: none;
-
 }
 .close{
     width: 28px;

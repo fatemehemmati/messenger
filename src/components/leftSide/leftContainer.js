@@ -4,7 +4,7 @@ import Contacts from "./user/Contacts";
 import Logo from "./Logo";
 import style from './LeftContainer.module.css';
 const leftContainer = (props) => {
-
+  const { user, changeChat, chatPage, contacts } = props;
   
   return (
     <div className={style.container}>
@@ -12,13 +12,13 @@ const leftContainer = (props) => {
         <Logo />
       </div>
       <div className={style.profile}>
-        <Profile user={props.user}/>
+        <Profile user={user}/>
       </div>
       <div className={style.contacts}>
         <Contacts
-          changeChatPage={props.changeChat}
-          contacts={props.contacts}
-          chatPage={props.chatPage}
+          changeChatPage={changeChat}
+          contacts={contacts}
+          chatPage={chatPage}
         />
       </div>
     </div>

@@ -6,23 +6,24 @@ import imageIcon from "../../assets/images/image.png";
 import documentIcon from "../../assets/images/file.png";
 import videoIcon from "../../assets/images/film.png";
 const Files = (props) => {
+  const { type, showFull } = props;
   const [title, setTitle] = useState('file');
   const [icon,setIcon]= useState(fileIcon)
 
   useEffect(() => {
-    if (props.type === '1') {
+    if (type === '1') {
       setTitle('files');
       setIcon(fileIcon)
     }
-    if (props.type === '2') {
+    if (type === '2') {
       setTitle('images');
       setIcon(imageIcon)
     }
-    if (props.type === '3') {
+    if (type === '3') {
       setTitle('documents');
       setIcon(documentIcon);
     }
-    if (props.type === '4') {
+    if (type === '4') {
       setTitle('videos');
       setIcon(videoIcon);
     }
@@ -31,7 +32,7 @@ const Files = (props) => {
 )
   return (
     <div className={style.container}>
-      <p className={style.type}>{props.showFull && title}</p>
+      <p className={style.type}>{showFull && title}</p>
       <div className={style.fileItems}>
         <img className={style.icons} src={icon} alt="" />
       </div>

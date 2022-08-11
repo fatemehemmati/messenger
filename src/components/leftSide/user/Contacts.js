@@ -6,19 +6,17 @@ import searchIcon from "../../../assets/images/Path67.png";
 const Contacts = (props) => {
   const [searchInput, setSearchInput] = useState('');
   const [searchResault, setSearchResault] = useState([]);
+  const { contacts, chatPage, changeChatPage } = props;
   
-  const { contacts } = props;
-
   const searchHandler = (e) => {
     const { contacts } = props;
-    setSearchInput(e.target.value);
+    const { value } = e.target;
+    setSearchInput(value);
 
     let res =contacts.filter((value) => {
      return value.username.toLowerCase().includes(e.target.value)
     })
-    
-    setSearchResault(res);
-    
+    setSearchResault(res); 
   }
 
   return (
@@ -41,8 +39,8 @@ const Contacts = (props) => {
         {searchResault.map((element, index) => (
           <ContactsProfile
             key={index}
-            chatPage={props.chatPage}
-            changeChatPage={props.changeChatPage}
+            chatPage={chatPage}
+            changeChatPage={changeChatPage}
             contact={element}
           />
         ))}
@@ -51,8 +49,8 @@ const Contacts = (props) => {
         {contacts.map((element, index) => (
           <ContactsProfile
             key={index}
-            chatPage={props.chatPage}
-            changeChatPage={props.changeChatPage}
+            chatPage={chatPage}
+            changeChatPage={changeChatPage}
             contact={element}
           />
         ))}

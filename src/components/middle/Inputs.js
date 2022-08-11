@@ -5,6 +5,7 @@ import attachFileImg from "../../assets/images/paperclip.png";
 import sendIcon from "../../assets/images/SendButton.png";
 
 const Inputs = (props) => {
+  const { ChatPage, addMessage, changePage } = props;
   const [inputText, setInputText] = useState("");
   const [error, setError] = useState(null);
 
@@ -15,7 +16,7 @@ const Inputs = (props) => {
         data: {
           Text: inputText,
           Owner: 1,
-          chat: props.ChatPage.id,
+          chat: ChatPage.id,
         },
       }),
       headers: {
@@ -27,7 +28,7 @@ const Inputs = (props) => {
         return res.json();
       })
       .then((response) => {
-        props.addMessage((current) => [...current, response.data]);
+        addMessage((current) => [...current, response.data]);
         setInputText("");
       })
       .catch((error) => {
@@ -35,11 +36,12 @@ const Inputs = (props) => {
       });
   };
   const clickHandler = () => {
-    props.changePage("upload");
+    changePage("upload");
   };
 
   const saveMessageHandler = (e) => {
-    setInputText(e.target.value);
+    const{value}=e.target
+    setInputText(value);
   };
 
   return (
